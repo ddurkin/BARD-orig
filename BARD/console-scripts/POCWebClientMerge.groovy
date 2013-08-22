@@ -12,9 +12,9 @@ def dstRootDir = '/Users/ddurkin/dev/bard/BARD-df/BARD'
 def srcRootDir = '/Users/ddurkin/dev/bard/bard-web-query/bard-web-client'
 
 ant.sequential{
-//     copyDir(srcRootDir, dstRootDir, 'grails-app', ['conf/**/*', 'i18n/**/*'], ant)
-//     copyDir(srcRootDir, dstRootDir, 'src', [], ant)
-//     copyDir(srcRootDir, dstRootDir, 'test', [], ant)
+     copyDir(srcRootDir, dstRootDir, 'grails-app', ['conf/**/*', 'i18n/**/*'], ant)
+     copyDir(srcRootDir, dstRootDir, 'src', [], ant)
+     copyDir(srcRootDir, dstRootDir, 'test', [], ant)
      copyDir(srcRootDir, dstRootDir, 'web-app', [], ant)
 }
 
