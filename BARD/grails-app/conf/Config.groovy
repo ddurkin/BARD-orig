@@ -16,6 +16,18 @@ import grails.util.Environment
 grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
 grails.mime.use.accept.header = false
+
+grails.cache.clearAtStartup=true
+grails.cache.config = {
+    cache {
+        name 'dictionaryElements'
+        eternal false
+        overflowToDisk true
+        maxElementsInMemory 10000
+        maxElementsOnDisk 10000000
+    }
+}
+
 grails.mime.types = [html: ['text/html', 'application/xhtml+xml'],
         xml: ['text/xml', 'application/xml'],
         text: 'text/plain',
@@ -133,31 +145,7 @@ switch (Environment.current) {
     default:
         //use basic auth and in memory security services in no-production environments
         grails.plugins.springsecurity.providerNames = ['bardAuthorizationProviderService', 'inMemMapAuthenticationProviderService', 'anonymousAuthenticationProvider', 'rememberMeAuthenticationProvider']
-        grails {
-            plugins {
-                springsecurity {
-                    controllerAnnotations.staticRules = [
-                            '/console/**': ['ROLE_CONSOLE_USER']
-                    ]
-                    ipRestrictions = [
-                            '/console/**': '127.0.0.1'
-                    ]
-                    useBasicAuth = true
-                    basic.realmName = 'CAP'
-                    filterChain.chainMap = [
-                            '/person/**': 'JOINED_FILTERS,-exceptionTranslationFilter',
-                            '/element/**': 'JOINED_FILTERS,-exceptionTranslationFilter',
-                            '/project/**': 'JOINED_FILTERS,-exceptionTranslationFilter',
-                            '/context/**': 'JOINED_FILTERS,-exceptionTranslationFilter',
-                            '/contextItem/**': 'JOINED_FILTERS,-exceptionTranslationFilter',
-                            '/document/**': 'JOINED_FILTERS,-exceptionTranslationFilter',
-                            '/assayDefinition/**': 'JOINED_FILTERS,-exceptionTranslationFilter',
-                            '/experiment/**': 'JOINED_FILTERS,-exceptionTranslationFilter',
-                            '/**': 'JOINED_FILTERS,-basicAuthenticationFilter,-basicExceptionTranslationFilter'
-                    ]
-                }
-            }
-        }
+
 }
 
 //prevent session fixation attacks
