@@ -20,7 +20,7 @@ grails.project.dependency.resolution = {
     checksums true // Whether to verify checksums on resolve
 
     repositories {
-        inherit(false) // don't repositories from plugins
+        inherit(true) // don't repositories from plugins
         grailsPlugins()
         grailsHome()
         mavenRepo "http://bard-repo.broadinstitute.org:8081/artifactory/bard-virtual-repo"
@@ -120,9 +120,9 @@ grails.plugin.location.'bard-domain-model' = "../BardDomainModel"
 grails.plugin.location.'crowd-user-registration' = "../crowdUserRegistration"
 grails.plugin.location.'functional-spock'="../functional-spock"
 
-grails.plugin.location.'bard-web-client'="../../bard-web-query/bard-web-client"
-grails.plugin.location.'bard-rest-api-wrapper' = "../../bard-web-query/bard-rest-api-wrapper"
 grails.plugin.location.'shopping-cart:0.8.2' = "../../bard-web-query/shopping-cart-0.8.2"
+grails.plugin.location.'bard-rest-api-wrapper' = "../../bard-web-query/bard-rest-api-wrapper"
+grails.plugin.location.'bard-web-client'="../../bard-web-query/bard-web-client"
 
 codenarc.ruleSetFiles = "file:grails-app/conf/BardCodeNarcRuleSet.groovy"
 codenarc.reports = {
