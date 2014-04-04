@@ -1,0 +1,8 @@
+mavenRepoUrl=http://bard-repo:8081/artifactory/bard-virtual-repo
+
+devenv.url=jdbc:oracle:thin:@localhost:1522:AL32UTF8
+devenv.username=devenv
+devenv.password=devenv
+
+excluded.dataTables=AUDIT_COLUMN_LOG,AUDIT_ROW_LOG,DATABASECHANGELOGLOCK
+excluded.schemaTables=DATABASECHANGELOGLOCK,DATABASECHANGELOG
