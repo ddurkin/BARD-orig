@@ -1,8 +1,8 @@
 set -ex
 export DEBIAN_FRONTEND='noninteractive' 
-#apt-get update -y
-#apt-get install -y openjdk-7-jdk 
-#apt-get install -yq tomcat7 redis-server
+apt-get update -y
+apt-get install -y openjdk-7-jdk 
+apt-get install -yq tomcat7 redis-server
 
 /etc/init.d/tomcat7 stop
 
@@ -35,4 +35,4 @@ chown -R tomcat7:tomcat7 ~tomcat7/schema-copy
 cd ~tomcat7/schema-copy
 ./gradlew dependencies
 
-#/etc/init.d/tomcat7 start
+/etc/init.d/tomcat7 start
