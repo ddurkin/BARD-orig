@@ -35,4 +35,4 @@ chown -R tomcat7:tomcat7 ~tomcat7/schema-copy
 cd ~tomcat7/schema-copy
 ./gradlew dependencies
 
-/etc/init.d/tomcat7 start
+#/etc/init.d/tomcat7 start
