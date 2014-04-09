@@ -19,7 +19,7 @@ appName= "BARD"
 server.port = "8080"
 grails.serverURL = "http://${bardHostname}:${server.port}/${appName}"
 
-ncgc.server.root.url = "{bardSearchApiUrl}"
+ncgc.server.root.url = "${bardSearchApiUrl}"
 promiscuity.badapple.url = "${ncgc.server.root.url}/plugins/badapple/prom/cid/"
 grails.jesque.enabled = false
 
