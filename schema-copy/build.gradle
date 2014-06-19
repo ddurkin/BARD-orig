@@ -6,20 +6,20 @@ buildscript {
         }
     }
     dependencies {
-        classpath(group:'com.github.oracle-schema-copy', name: 'oracle-schema-copy', version: '1.3.1'){
+        classpath(group:'com.github.oracle-schema-copy', name: 'oracle-schema-copy', version: '1.3.2'){
             exclude module: 'ojdbc5'
         }
     }
 }
 repositories {
+    mavenLocal()
     maven {
-	mavenLocal()
         url(mavenRepoUrl)
     }
 }
 project.configurations.create('oracleSchemaCopyClasspath')
 dependencies {
-    oracleSchemaCopyClasspath(group:'com.github.oracle-schema-copy', name: 'oracle-schema-copy', version: '1.3.1')
+    oracleSchemaCopyClasspath(group:'com.github.oracle-schema-copy', name: 'oracle-schema-copy', version: '1.3.2')
 }
 
 apply plugin: 'groovy'
