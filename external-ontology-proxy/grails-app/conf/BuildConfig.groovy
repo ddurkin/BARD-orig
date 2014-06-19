@@ -49,8 +49,8 @@ grails.project.dependency.resolution = {
         inherit(false) // don't repositories from plugins
         grailsPlugins()
         grailsHome()
-        mavenRepo "http://bard-repo.broadinstitute.org:8081/artifactory/bard-virtual-repo"
-        grailsRepo("http://bard-repo.broadinstitute.org:8081/artifactory/bard-virtual-repo", "grailsCentral")
+        mavenRepo "http://localhost:8081/artifactory/bard-virtual-repo"
+        grailsRepo("http://localhost:8081/artifactory/bard-virtual-repo", "grailsCentral")
     }
 
     dependencies {
