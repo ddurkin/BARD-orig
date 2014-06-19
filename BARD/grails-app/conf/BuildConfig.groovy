@@ -30,7 +30,6 @@ grails.servlet.version = "2.5" // Change depending on target container complianc
 grails.project.work.dir = "target"
 grails.project.target.level = 1.6
 grails.project.source.level = 1.6
-grails.server.port.http = 8081
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 
 def gebVersion = "0.9.0-RC-1"
@@ -51,8 +50,8 @@ grails.project.dependency.resolution = {
         grailsHome()
 
         if (useBroadRepo) {
-            mavenRepo "http://bard-repo.broadinstitute.org:8081/artifactory/bard-virtual-repo"
-            grailsRepo("http://bard-repo.broadinstitute.org:8081/artifactory/bard-virtual-repo", "grailsCentral")
+            mavenRepo "http://localhost:8081/artifactory/bard-virtual-repo"
+            grailsRepo("http://localhost:8081/artifactory/bard-virtual-repo", "grailsCentral")
         } else {
             grailsCentral()
             mavenLocal()
@@ -96,7 +95,7 @@ grails.project.dependency.resolution = {
         }
         compile 'log4j:apache-log4j-extras:1.2.17'
 
-        compile "bard:external-validation-api:20140106"
+        compile "bard:external-validation-api:20140227"
         if (useBroadRepo) {
             // this largely because this lib is only
             // used to run adhoc scripts run at the Broad.
