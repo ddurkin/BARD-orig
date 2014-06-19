@@ -6,7 +6,7 @@ subprojects {
 
     repositories {
         maven {
-            url('http://bard-repo.broadinstitute.org:8081/artifactory/bard-virtual-repo')
+            url('http://localhost:8081/artifactory/bard-virtual-repo')
         }
     }
 
@@ -39,6 +39,7 @@ subprojects {
 
     test {
         maxHeapSize = "512m"
+        systemProperties = System.getProperties()
     }
 }
 
