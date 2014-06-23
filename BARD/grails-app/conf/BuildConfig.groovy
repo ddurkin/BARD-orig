@@ -95,7 +95,7 @@ grails.project.dependency.resolution = {
         }
         compile 'log4j:apache-log4j-extras:1.2.17'
 
-        compile "bard:external-validation-api:20140227"
+        compile "bard:external-validation-api:20140623"
         if (useBroadRepo) {
             // this largely because this lib is only
             // used to run adhoc scripts run at the Broad.
