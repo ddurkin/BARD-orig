@@ -12,7 +12,7 @@ subprojects {
 
     group='bard'
     archivesBaseName="${getRootProject().name}-${name}"
-    version = '20140620'
+    version = '20140623'
     sourceCompatibility = 1.6
     targetCompatibility = 1.6
 

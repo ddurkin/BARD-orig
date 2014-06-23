@@ -50,13 +50,13 @@ public class RegisteringExternalOntologyFactory implements ExternalOntologyFacto
 	}
 
 	protected void initialize() throws ExternalOntologyException {
-//		getCreators().add(new ExternalOntologyNCBI.NCBICreator());
+		getCreators().add(new ExternalOntologyNCBI.NCBICreator());
 		getCreators().add( new ExternalOntologyOLS.OLSCreator() );
 //		getCreators().add(new ExternalOntologyGO.GOCreator(GOUtil.getEBIDataSource()));
 //		getCreators().add(new ExternalOntologyGOGeneProduct.GOCreator(GOUtil.getEBIDataSource()));
 //		getCreators().add(new ExternalOntologyUniprot.UniprotCreator());
-//		getCreators().add(new ExternalOntologyATCC.ATCCCreator());
-//		getCreators().add(new ExternalOntologyDisease.DiseaseCreator());
+		getCreators().add(new ExternalOntologyATCC.ATCCCreator());
+		getCreators().add(new ExternalOntologyDisease.DiseaseCreator());
 	}
 
 	private List<ExternalOntologyCreator> creators = new LinkedList<ExternalOntologyCreator>();
