@@ -26,23 +26,16 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 <%@ page import="bard.db.enums.Status; org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils; bard.db.enums.Status; org.apache.commons.lang3.tuple.Pair" %>
 <div id="showExperiments" xmlns="http://www.w3.org/1999/html">
-    <g:if test="${assayInstance.experiments}">
-        <g:render template="/layouts/templates/tableSorterTip"/>
-        <div class="span3">
-
-        </div>
-        <div class="span9">
+    <div class="span9">
         <g:if test="${assayInstance.allowsNewExperiments()}">
             <sec:ifLoggedIn>
                 <g:link controller="experiment" action="create" params="${[assayId: assayInstance.id]}"
                         class="btn"><i class="icon-plus"></i>Create Experiment</g:link>
             </sec:ifLoggedIn>
         </g:if>
-        </div>
-        <div class="span3">
-
-        </div>
-
+    </div>
+    <g:if test="${assayInstance.experiments}">
+        <g:render template="/layouts/templates/tableSorterTip"/>
         <div class="span9">
             <table class="table table-striped table-hover table-bordered">
                 <thead>
